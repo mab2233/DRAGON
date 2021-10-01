@@ -13729,7 +13729,9 @@ end,nil)
 end,nil)
 end
 end
-if text == "تعداد" or text == "ایدی" or text == "آیدی" then 
+
+
+if text == "تعداد " or text == "ایدی" or text == "آیدی" then 
 if tonumber(msg.reply_to_message_id) == 0  then 
  function GetPro(FreemanagerBOT, result)
 local Msgs = redis:get('Total:messages:'..msg.chat_id..':'..(msg.sender_user_id))
