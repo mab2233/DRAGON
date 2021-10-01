@@ -32,6 +32,7 @@ io.write('\27[0;31m تم حفظ التوكن بنجاح \naღ═───═�
 database:set(id_server..":token",token)
 end 
 else
+print('\27[0;35mღ═───═𝑶𝑳𝑰𝑨𝑵𝑶═───═ღ\n لم يتم حفظ التوكن ارسل لي التوكن الان')
 end 
 os.execute('lua DRAGON.lua')
 end
@@ -11627,20 +11628,20 @@ Text = '\n ღ بالتاكيد تم تعطيل الرفع'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'ايدي' and tonumber(msg.reply_to_message_id_) > 0 then
-function start_function(extra, result, success)
-tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
-local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..result.sender_user_id_) or 1) 
-local Contact = tonumber(database:get(bot_id..'Add:Contact'..msg.chat_id_..':'..result.sender_user_id_) or 0) 
-local NUMPGAME = tonumber(database:get(bot_id..'NUM:GAMES'..msg.chat_id_..result.sender_user_id_) or 0)
-local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..result.sender_user_id_) or 0)
-local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
-local username = ('[@'..data.username_..']' or 'لا يوجد')
-local iduser = result.sender_user_id_
-send(msg.chat_id_, msg.id_,' ღ ايديه ~⪼ '..iduser..'\n ღ معرفه ~⪼ '..username..'\n ღ رتبته ~⪼ '..rtp..'\n ღ تعديلاته ~⪼ '..edit..'\n ღ نقاطه ~⪼ '..NUMPGAME..'\n ღ جهاته ~⪼ '..Contact..'\n ღ رسائله ~⪼ '..Msguser..'')
-end,nil)
+if text == "id" or text == "ایدی" or text == "آیدی" then 
+if tonumber(msg.reply_to_message_id) == 0  then 
+ function GetPro(FreemanagerBOT, result)
+local Msgs = redis:get('Total:messages:'..msg.chat_id..':'..(msg.sender_user_id))
+ if result.photos and result.photos[0] then
+print('persistent_id : '..result.photos[0].sizes[2].photo.persistent_id)  
+sendPhoto(msg.chat_id, msg.id, 0, 1, nil, result.photos[0].sizes[2].photo.persistent_id,'>شناسه گروه: ['..msg.chat_id..']\nشناسه شما: ['..msg.sender_user_id..']\n>تعداد پیغام های ارسالی شما: ['..Msgs..']')
+else
+sendText(msg.chat_id, msg.id,  '>شناسه گروه ['..msg.chat_id..']\nشناسه شما ['..msg.sender_user_id..']\n>تعداد پیغام های ارسالی شما: ['..Msgs..']', 'md')
+print '                      Not Photo                      ' 
 end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
+end
+tdbot_function ({_ ="getUserProfilePhotos", user_id = (msg.sender_user_id), offset =0, limit = 100000000 },GetPro, nil)
+end
 end
 if text and text:match("^ايدي @(.*)$") then
 local username = text:match("^ايدي @(.*)$")
@@ -13729,23 +13730,6 @@ end,nil)
 end
 end
 
-
-if text == "تعداد " or text == "ایدی" or text == "آیدی" then 
-if tonumber(msg.reply_to_message_id) == 0  then 
- function GetPro(FreemanagerBOT, result)
-local Msgs = redis:get('Total:messages:'..msg.chat_id..':'..(msg.sender_user_id))
- if result.photos and result.photos[0] then
-print('persistent_id : '..result.photos[0].sizes[2].photo.persistent_id)  
-sendPhoto(msg.chat_id, msg.id, 0, 1, nil, result.photos[0].sizes[2].photo.persistent_id,'>شناسه گروه: ['..msg.chat_id..']\nشناسه شما: ['..msg.sender_user_id..']\n>تعداد پیغام های ارسالی شما: ['..Msgs..']')
-else
-sendText(msg.chat_id, msg.id,  '>شناسه گروه ['..msg.chat_id..']\nشناسه شما ['..msg.sender_user_id..']\n>تعداد پیغام های ارسالی شما: ['..Msgs..']', 'md')
-print '                      Not Photo                      ' 
-end
-end
-tdbot_function ({_ ="getUserProfilePhotos", user_id = (msg.sender_user_id), offset =0, limit = 100000000 },GetPro, nil)
-end
-end
-
 if text == 'سحكاتي' or text == 'تعديلاتي' then 
 local Num = tonumber(database:get(bot_id..'edits'..msg.chat_id_..msg.sender_user_id_) or 0)
 if Num == 0 then 
@@ -13764,7 +13748,7 @@ send(msg.chat_id_, msg.id_,' ღ تم مسح جهاتك'  )
 database:del(bot_id..'Add:Contact'..msg.chat_id_..':'..msg.sender_user_id_)
 end
 if text == 'جهاتي' or text == 'شكد ضفت' then
-if tonumber(msg.sender_user_id_) == false then
+if AddChannel(msg.sender_user_id_) == false then
 local ABCDABCDL = database:get(bot_id..'text:ch:user')
 if ABCDABCDL then
 send(msg.chat_id_, msg.id_,'['..ABCDABCDL..']')
