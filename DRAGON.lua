@@ -1207,9 +1207,6 @@ keyboard.inline_keyboard = {
 {
 {text = '𝗗𝗔𝗠𝗜𝗘𝗧𝗧𝗔', url = "https://t.me/ABCDABCDL"},
 },
-{
-{text = 'اضغط هنا وضيف البوت لي بارك 🔰🕊', url="https://t.me/black_ak_bot?startgroup=new"}},  
-}, 
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/UxU_M&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -2884,7 +2881,7 @@ keyboard.inline_keyboard = {
 {{text = '☼︎𝐷𝑒𝑣 𝐴𝑏𝑑𝑜☼︎',url="t.me/UxU_M"}}, 
 {{text = '☼︎𝐷𝑒𝑣 𝐽𝑎𝑘𝑠𝑜𝑛☼︎',url="t.me/JAXSO0N"}}, 
 {{text = '❨ 𝗗𝗔𝗠𝗜𝗘𝗧𝗧𝗔 ❩ ',url="t.me/ABCDABCDL"}}, 
-{{text = 'اضغط هنا وضيف البوت لي بارك 🔰🕊', url="https://t.me/black_ak_bot?startgroup=new"}},  
+{{text = 'اضف البوت لمجمعتك🦅', url="https://t.me/black_ak_bot?startgroup=new"}},  
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/O_L_I_N_O_bot&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -12519,7 +12516,7 @@ local List = {
 [[
 ᯓ 𝟔𝟔𝟔 𖡋 #username •✟
 ᯓ 𝟔𝟔𝟔𖡋 #stast  •✟
-ᯓ 𝟔𝟔??𖡋 #id  • ✟
+ᯓ 𝟔𝟔𝟔𖡋 #id  • ✟
 ᯓ 𝟔𝟔𝟔𖡋 #msgs  •✟ 
 ᯓ 𝟔𝟔𝟔𖡋 #game •✟
 ᯓ 𝟔𝟔𝟔𖡋 𝗖𝗛 - @ABCDABCDL ♬.
@@ -13432,7 +13429,7 @@ Msᴀɢ ~ #msgs
 ]],
 [[
 • ♬ - 𝚄𝚂𝙴𝚁 « #username  🍭
-• ♬ - 𝙸?? « #id  🍭
+• ♬ - 𝙸𝙳 « #id  🍭
 • ♬ - 𝙼𝚂𝙶𝚂 « #msgs  🍭
 • ♬ - 𝚂𝚃𝙰𝚂𝚃 « #stast  🍭
 • ♬ - 𝗖𝗛 - @ABCDABCDL ♬
@@ -14497,7 +14494,7 @@ send(msg.chat_id_, msg.id_,Text)
 end
 if text == 'بوت حذف' or text == 'رابط حذف' or text == 'رابط الحذف' then
 local Text = [[
- ♬ 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐓𝐇𝐄 𝗗𝗔𝗠𝗜𝗘𝗧𝗧𝗔 ♬ 
+ ♬ 𝐖𝐄??𝐂𝐎𝐌𝐄 𝐓𝐎 𝐓𝐇𝐄 𝗗𝗔𝗠𝗜𝗘𝗧𝗧𝗔 ♬ 
 بوت حذف حساب ♧
 فكر قبل لا تتسرع وتروح
 ]]
@@ -15080,7 +15077,7 @@ local Teext =[[
 ♧═───═𝗗𝗔𝗠𝗜𝗘𝗧𝗧𝗔═───═♧
 ♬رفع + تنزيل ← خاين
 ♬تاك للخاينين
-♧═───═𝗗𝗔𝗠𝗜𝗘𝗧??𝗔═───═♧
+♧═───═𝗗𝗔𝗠𝗜𝗘𝗧𝗧𝗔═───═♧
 ♬رفع  ← علي زبي
 ♬تنزيل ←من زبي 
 ♬تاك للمتناكين
